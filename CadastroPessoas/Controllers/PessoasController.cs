@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CadastroPessoas.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,17 @@ namespace CadastroPessoas.Controllers
 {
     public class PessoasController : Controller
     {
+        private readonly PessoaService _pessoaService;
+
+        public PessoasController(PessoaService pessoaService)
+        {
+            _pessoaService = pessoaService;        
+        }
         public IActionResult Index()
         {
-            return View();
+            var list = _pessoaService.FindAll();
+
+            return View(list);
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CadastroPessoas.Context;
+using CadastroPessoas.Services;
 
 namespace CadastroPessoas
 {
@@ -29,6 +30,8 @@ namespace CadastroPessoas
 
             services.AddDbContext<CadastroPessoasContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("CadastroPessoasContext")));
+
+            services.AddScoped<PessoaService>();
         }
         
 
