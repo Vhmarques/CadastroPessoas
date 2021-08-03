@@ -20,6 +20,8 @@ namespace CadastroPessoas.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DtNascimento { get; set; }
 
+        [Required(ErrorMessage ="{0} Deve ser preenchido com M para masculino ou F para feminino")]
+        [StringLength(1)]
         public string Sexo { get; set; }
 
         public Pessoa()
