@@ -20,15 +20,18 @@ namespace CadastroPessoas.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DtNascimento { get; set; }
 
+        public string Sexo { get; set; }
+
         public Pessoa()
         {
         }
 
-        public Pessoa(int id, string nome, DateTime dtNascimento)
+        public Pessoa(int id, string nome, DateTime dtNascimento, string sexo)
         {
             Id = id;
             Nome = nome;
             DtNascimento = dtNascimento;
+            Sexo = sexo;
         } 
     }    
 }

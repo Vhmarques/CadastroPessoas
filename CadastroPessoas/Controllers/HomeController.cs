@@ -1,4 +1,5 @@
 ﻿using CadastroPessoas.Models;
+using CadastroPessoas.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
