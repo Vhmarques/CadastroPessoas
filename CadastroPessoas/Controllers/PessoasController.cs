@@ -1,4 +1,5 @@
-﻿using CadastroPessoas.Services;
+﻿using CadastroPessoas.Models;
+using CadastroPessoas.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,19 @@ namespace CadastroPessoas.Controllers
 
             return View(list);
         }
+
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Criar(Pessoa pessoa)
+        {
+            _pessoaService.Insert(pessoa);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

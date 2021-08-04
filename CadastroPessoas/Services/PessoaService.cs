@@ -20,5 +20,11 @@ namespace CadastroPessoas.Services
         {
             return _context.Pessoas.ToList();        
         }
+
+        public void Insert(Pessoa obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }
